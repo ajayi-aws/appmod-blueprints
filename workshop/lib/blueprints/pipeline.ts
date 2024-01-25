@@ -40,7 +40,7 @@ export default class PipelineStack {
             .version("auto")
             .region(env.region)
             .account(env.account)
-            .resourceProvider(blueprints.GlobalResources.Vpc, new VpcLookupByNameProvider("appmod-vpc"))
+            .resourceProvider(blueprints.GlobalResources.Vpc, new VpcLookupByNameProvider("Target"))
             .addOns(
                 new blueprints.AwsLoadBalancerControllerAddOn,
                 new blueprints.VpcCniAddOn, 
