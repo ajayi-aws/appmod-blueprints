@@ -7,7 +7,7 @@ export default class HybridCluster {
     static build(scope: Construct, props: StackProps) {
         blueprints.EksBlueprint.builder()
             .version("auto")
-            .resourceProvider(blueprints.GlobalResources.Vpc, new VpcLookupByNameProvider("appmod-vpc"))
+            .resourceProvider(blueprints.GlobalResources.Vpc, new VpcLookupByNameProvider("Target"))
             .region(props.env?.region)
             .addOns(
                 new blueprints.AwsLoadBalancerControllerAddOn,
